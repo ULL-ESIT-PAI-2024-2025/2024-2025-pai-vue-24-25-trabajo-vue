@@ -1,6 +1,7 @@
-import { ComponentPublicInstance } from 'vue';
+import { defineComponent } from 'vue';
 
-export interface CanvasFigurasComponent extends ComponentPublicInstance {
+// Interfaces
+interface CanvasFigurasData {
   figuraSeleccionada: string;
   color: string;
   posX: number;
@@ -18,9 +19,11 @@ export interface CanvasFigurasComponent extends ComponentPublicInstance {
   mostrarRadio: boolean;
   mostrarBase: boolean;
   mostrarAltura: boolean;
+  ctx: CanvasRenderingContext2D | null;
 }
 
-export function actualizarInputs(component: CanvasFigurasComponent) {
+// Funciones de utilidad
+function actualizarInputs(component: any) {
   // Resetear todos los controles a falso
   component.mostrarLado = false;
   component.mostrarAncho = false;
@@ -49,11 +52,11 @@ export function actualizarInputs(component: CanvasFigurasComponent) {
   }
 }
 
-export function limpiarCanvas(ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement) {
+function limpiarCanvas(ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement) {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
-export function dibujarFigura(component: CanvasFigurasComponent, ctx: CanvasRenderingContext2D) {
+function dibujarFigura(component: any, ctx: CanvasRenderingContext2D) {
   if (!component.figuraSeleccionada) return;
 
   const x = component.posX || 0;
@@ -109,3 +112,53 @@ export function dibujarFigura(component: CanvasFigurasComponent, ctx: CanvasRend
 
   ctx.restore();
 }
+
+// Exportar el componente completo
+export default defineComponent({
+  name: 'CanvasFiguras',
+  data(): CanvasFigurasData {
+    return {
+      figuraSeleccionada: 'cuadrado',
+      color: '#000000',
+      posX: 100,
+      posY: 100,
+      rotacion: 0,
+      lado: 100,
+      ancho: 100,
+      alto: 100,
+      radio: 50,
+      base: 100,
+      altura: 100,
+      mostrarLado: true,
+      mostrarAncho: false,
+      mostrarAlto: false,
+      mostrarRadio: false,
+      mostrarBase: false,
+      mostrarAltura: false,
+      ctx: null
+    }
+  },
+  mounted() {
+    this.inicializarCanvas();
+    this.actualizarInputs();
+  },
+  methods: {
+    inicializarCanvas() {
+      const canvas = this.$refs.canvas as HTMLCanvasElement;
+      this.ctx = canvas.getContext('2d');
+    },
+    actualizarInputs() {
+      actualizarInputs(this);
+    },
+    dibujarFigura() {
+      if (this.ctx) {
+        dibujarFigura(this, this.ctx);
+      }
+    },
+    limpiarCanvas() {
+      if (this.ctx && this.$refs.canvas) {
+        limpiarCanvas(this.ctx, this.$refs.canvas as HTMLCanvasElement);
+      }
+    }
+  }
+});
