@@ -38,14 +38,14 @@ defineExpose({
 
 <template>
   <div class="keyboard-container">
-    <div v-for="row in keyboardLayout" :key="row.join('')" class="buttons is-centered my-1">
+    <div v-for="row in keyboardLayout" :key="row.join('')" class="keyboard-row">
       <button 
         v-for="letter in row" 
         :key="letter"
         :disabled="disabledLetters.includes(letter)"
         @click="letterClicked(letter)"
-        class="button mx-1"
-        :class="{'is-light': !disabledLetters.includes(letter), 'is-dark': disabledLetters.includes(letter)}"
+        class="keyboard-key"
+        :class="{'is-active': !disabledLetters.includes(letter), 'is-disabled': disabledLetters.includes(letter)}"
       >
         {{ letter }}
       </button>
@@ -56,43 +56,67 @@ defineExpose({
 <style scoped>
 .keyboard-container {
   width: 100%;
-  max-width: 600px;
-  margin: 1rem auto;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  gap: 0.5rem;
 }
 
-.buttons {
-  margin-top: 0.25rem !important;
-  margin-bottom: 0.25rem !important;
+.keyboard-row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 0.25rem;
 }
 
-.button {
-  font-size: 1rem;
-  padding: 0.5em 1em !important;
-  margin: 0 0.25rem !important;
-  height: auto !important;
+.keyboard-key {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  font-weight: bold;
+  padding: 0;
+  height: clamp(3rem, 6vh, 4rem);
+  width: clamp(2.5rem, 5vw, 3.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  border: 2px solid #dbdbdb;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-/* Still responsive on smaller screens */
-@media screen and (max-width: 600px) {
+.keyboard-key.is-active {
+  background-color: white;
+  color: #363636;
+}
+
+.keyboard-key.is-disabled {
+  background-color: #363636;
+  color: #f5f5f5;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.keyboard-key:not([disabled]):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  border-color: #b5b5b5;
+}
+
+@media screen and (max-width: 768px) {
+  .keyboard-key {
+    height: clamp(2.5rem, 5vh, 3.5rem);
+    width: clamp(2rem, 4vw, 3rem);
+  }
+}
+
+@media screen and (max-height: 600px) {
   .keyboard-container {
-    max-width: 95%;
+    gap: 0.25rem;
   }
   
-  .button {
-    font-size: 0.9rem;
-    padding: 0.4em 0.8em !important;
-    margin: 0 0.15rem !important;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .button {
-    font-size: 0.8rem;
-    padding: 0.3em 0.6em !important;
-    margin: 0 0.1rem !important;
+  .keyboard-key {
+    height: clamp(2rem, 4vh, 3rem);
   }
 }
 </style>

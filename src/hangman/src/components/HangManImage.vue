@@ -12,19 +12,31 @@ defineProps({
 </script>
 
 <template>
-  <div class="container">
-    <div class="has-text-centered">
-      <figure class="image is-256x256 is-inline-block">
-        <img :src="imageUrl" alt="Hangman state - Failed attempts: {{ attempts }}">
-      </figure>
-    </div>
+  <div class="hangman-image-wrapper">
+    <figure class="image is-256x256">
+      <img :src="imageUrl" alt="Hangman state - Failed attempts: {{ attempts }}">
+    </figure>
   </div>
 </template>
 
 <style scoped>
-/* Additional styling if needed - most styling comes from Bulma */
-.container {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+.hangman-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .image.is-256x256 {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media screen and (max-height: 600px) {
+  .image.is-256x256 {
+    width: 180px;
+    height: 180px;
+  }
 }
 </style>

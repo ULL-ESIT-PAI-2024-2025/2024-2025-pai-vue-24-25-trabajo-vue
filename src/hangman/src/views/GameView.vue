@@ -62,83 +62,145 @@ const resetGame = () => {
 
 <template>
   <div class="game-page">
-    <div class="container">
-      <div class="game-container">
-        <HangManImage :imageUrl="model.hangedMan" :attempts="6 - model.attemptNumber" />
-        
-        <!-- Fixed position notifications that don't affect layout -->
+    <div class="game-layout">
+      <!-- Left column: Game controls -->
+      <div class="game-controls">
         <div class="notifications-area">
-          <!-- Use v-if/else pattern to ensure only one notification displays -->
           <div v-if="isGameWon" class="notification is-success has-text-centered">
-            <p class="title is-5">Congratulations!</p>
+            <p class="title is-5 notification-title">Congratulations!</p>
             <p class="subtitle is-6">You guessed: <strong>{{ model.word.toUpperCase() }}</strong></p>
           </div>
           <div v-else-if="isGameLost" class="notification is-danger has-text-centered">
-            <p class="title is-5">Game Over!</p>
+            <p class="title is-5 notification-title">Game Over!</p>
             <p class="subtitle is-6">The word was: <strong>{{ model.word.toUpperCase() }}</strong></p>
           </div>
-          <!-- Empty div to maintain spacing when no notification is shown -->
           <div v-else class="notification-placeholder"></div>
         </div>
         
         <Display :word="model.word" :correctGuesses="correctGuesses" />
-        <Keyboard @letter-pressed="handleLetterPress" ref="keyboardRef" />
-        <div class="has-text-centered mt-4">
+        
+        <div class="keyboard-wrapper">
+          <Keyboard @letter-pressed="handleLetterPress" ref="keyboardRef" />
+        </div>
+        
+        <div class="reset-button-container">
           <ResetButton @reset-game="resetGame" />
         </div>
+      </div>
+      
+      <!-- Right column: Hangman image -->
+      <div class="hangman-container">
+        <HangManImage :imageUrl="model.hangedMan" :attempts="6 - model.attemptNumber" />
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-/* Custom game page container that fits in viewport without scrolling */
+/* Game page fills available space without scrolling */
 .game-page {
-  height: calc(100vh - 52px);
+  height: 100vh;
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 52px; /* Account for navbar height */
 }
 
-.game-container {
+/* Main layout using grid for responsive behavior */
+.game-layout {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
   width: 100%;
-  max-width: 700px;
-  height: auto;
-  margin: 0 auto;
-  padding: 1rem;
+  height: 100%;
+  align-items: center;
+  padding: 1rem 2rem;
+  max-width: 100vw;
+  max-height: calc(100vh - 52px);
+}
+
+/* Left column with game controls */
+.game-controls {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  position: relative;
-}
-
-/* Simple container for notifications */
-.notifications-area {
   width: 100%;
-  position: relative;
-  min-height: 0;
+  height: 100%;
+  justify-content: space-between;
 }
 
-/* Style notifications themselves */
+/* Right column with hangman image */
+.hangman-container {
+  justify-self: end;
+  align-self: center;
+}
+
+/* Notifications styling - UPDATED */
+.notifications-area {
+  flex: 0 0 auto;
+  min-height: 100px;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
 .notification {
   width: 100%;
   padding: 1rem;
-  margin-bottom: 0;
-  margin-top: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-/* Empty placeholder for consistent spacing */
-.notification-placeholder {
-  display: none;
+.notification-title {
+  margin-bottom: 0 !important;
 }
 
-/* Make the game fit on smaller screens */
-@media screen and (max-height: 700px) {
-  .game-container {
-    gap: 0.75rem;
-    padding: 0.75rem;
+.notification .subtitle {
+  margin-top: 0 !important;
+  line-height: 1.3;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.keyboard-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.reset-button-container {
+  margin-top: 1rem;
+  text-align: center;
+  flex: 0 0 auto;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  /* Stack elements vertically on mobile */
+  .game-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    padding: 1rem;
+    overflow-y: auto;
+    height: auto;
+  }
+  
+  .hangman-container {
+    justify-self: center;
+    order: -1; /* Move hangman to top on mobile */
+  }
+  
+  /* Adjust notifications for mobile */
+  .notifications-area {
+    min-height: 80px;
   }
   
   .notification {
@@ -146,14 +208,31 @@ const resetGame = () => {
   }
 }
 
+/* Adjustments for very small screens */
 @media screen and (max-height: 600px) {
-  .game-container {
-    gap: 0.5rem;
+  .game-page {
+    align-items: flex-start;
+    overflow-y: auto;
+  }
+  
+  .game-layout {
     padding: 0.5rem;
+  }
+  
+  .notifications-area {
+    min-height: 70px;
   }
   
   .notification {
     padding: 0.5rem;
+  }
+  
+  .notification-title {
+    font-size: 1rem !important;
+  }
+  
+  .notification .subtitle {
+    font-size: 0.9rem !important;
   }
 }
 </style>
