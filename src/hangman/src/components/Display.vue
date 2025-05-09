@@ -24,7 +24,7 @@ const displayWord = computed(() => {
 </script>
 
 <template>
-  <div class="section">
+  <div class="word-display">
     <div class="word-container has-text-centered">
       <div class="letter-container" v-for="(char, index) in displayWord" :key="index">
         <span class="letter" :class="{ 'is-hidden': !char.revealed }">
@@ -37,24 +37,30 @@ const displayWord = computed(() => {
 </template>
 
 <style scoped>
+.word-display {
+  width: 100%;
+  padding: 0.5rem 0;
+}
+
 .word-container {
   display: flex;
   justify-content: center;
-  margin: 2rem 0;
-  gap: 0.8rem;
+  margin: 0.5rem 0;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 .letter-container {
   position: relative;
-  width: 2rem;
-  height: 3rem;
+  width: 1.5rem;
+  height: 2.25rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .letter {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   font-weight: bold;
 }
 
@@ -66,7 +72,7 @@ const displayWord = computed(() => {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 4px;
+  height: 3px;
   background-color: #363636;
   border-radius: 2px;
 }

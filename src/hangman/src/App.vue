@@ -4,83 +4,62 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <div>
+    <!-- Fixed header at the top -->
+    <nav class="navbar is-light is-fixed-top" role="navigation" aria-label="main navigation">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item">
+            <img alt="Vue logo" src="@/assets/logo.svg" height="28">
+          </a>
+          
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/game">Hang Man</RouterLink>
-      </nav>
+        <div id="navMenu" class="navbar-menu">
+          <div class="navbar-start">
+            <RouterLink to="/" class="navbar-item">Home</RouterLink>
+            <RouterLink to="/about" class="navbar-item">About</RouterLink>
+            <RouterLink to="/game" class="navbar-item">Hang Man</RouterLink>
+          </div>
+          
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <HelloWorld msg="You did it!" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    
+    <!-- Add padding to body to prevent content from hiding under fixed navbar -->
+    <div style="padding-top: 52px;">
+      <RouterView />
     </div>
-  </header>
-
-  <RouterView />
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+<style>
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+
+/* Custom styles for navbar */
+.navbar-item.router-link-exact-active {
+  background-color: #f5f5f5;
+  color: #3273dc;
+  font-weight: bold;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+/* Fix for logo sizing */
+.navbar-item img {
+  max-height: 28px;
 }
 
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
+/* Custom container padding for better spacing */
+.container {
   padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
 }
 </style>

@@ -38,13 +38,13 @@ defineExpose({
 
 <template>
   <div class="keyboard-container">
-    <div v-for="row in keyboardLayout" :key="row.join('')" class="buttons is-centered my-2">
+    <div v-for="row in keyboardLayout" :key="row.join('')" class="buttons is-centered my-1">
       <button 
         v-for="letter in row" 
         :key="letter"
         :disabled="disabledLetters.includes(letter)"
         @click="letterClicked(letter)"
-        class="button is-medium mx-1"
+        class="button mx-1"
         :class="{'is-light': !disabledLetters.includes(letter), 'is-dark': disabledLetters.includes(letter)}"
       >
         {{ letter }}
@@ -55,6 +55,44 @@ defineExpose({
 
 <style scoped>
 .keyboard-container {
-  margin: 20px 0;
+  width: 100%;
+  max-width: 600px;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buttons {
+  margin-top: 0.25rem !important;
+  margin-bottom: 0.25rem !important;
+}
+
+.button {
+  font-size: 1rem;
+  padding: 0.5em 1em !important;
+  margin: 0 0.25rem !important;
+  height: auto !important;
+}
+
+/* Still responsive on smaller screens */
+@media screen and (max-width: 600px) {
+  .keyboard-container {
+    max-width: 95%;
+  }
+  
+  .button {
+    font-size: 0.9rem;
+    padding: 0.4em 0.8em !important;
+    margin: 0 0.15rem !important;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .button {
+    font-size: 0.8rem;
+    padding: 0.3em 0.6em !important;
+    margin: 0 0.1rem !important;
+  }
 }
 </style>

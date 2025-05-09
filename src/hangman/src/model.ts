@@ -13,7 +13,7 @@
  */
 
 import { Letter } from './hangman-essentials.ts';
-import animalsNames from '../public/data/animals.json';
+import animalsNames from './data/animals.json';
 
 /**
  * Model class for the Hangman game
