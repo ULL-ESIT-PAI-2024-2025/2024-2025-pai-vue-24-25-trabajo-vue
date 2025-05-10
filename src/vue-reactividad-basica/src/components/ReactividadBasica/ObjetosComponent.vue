@@ -1,3 +1,16 @@
+<!--
+  Universidad de La Laguna
+  Escuela Superior de Ingeniería y Tecnología
+  Grado en Ingeniería Informática
+  Programación de Aplicaciones Interactivas
+
+  @description Componente Vue para mostrar objetos reactivos. 
+               Permite editar el nombre, apellido y edad de un usuario.
+  @author Álvaro Pérez Ramos
+  @file ObjetosComponent.vue
+  @since 10 MAY 2025
+-->
+
 <template>
   <section class="seccion">
     <h2>Objetos Reactivos</h2>

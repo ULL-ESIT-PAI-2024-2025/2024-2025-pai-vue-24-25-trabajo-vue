@@ -1,3 +1,15 @@
+<!-- 
+  Universidad de La Laguna
+  Escuela Superior de Ingeniería y Tecnología
+  Grado en Ingeniería Informática
+  Programación de Aplicaciones Interactivas
+
+  @description App Vue principal que importa el componente ReactividadContainer y lo renderiza en la vista.
+  @author Álvaro Pérez Ramos
+  @file App.vue
+  @since 10 MAY 2025
+-->
+
 <template>
   <div id="app">
     <ReactividadContainer />

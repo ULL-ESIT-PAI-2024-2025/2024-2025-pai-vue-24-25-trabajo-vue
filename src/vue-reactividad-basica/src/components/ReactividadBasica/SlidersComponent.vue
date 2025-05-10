@@ -1,3 +1,16 @@
+<!--
+  Universidad de La Laguna
+  Escuela Superior de Ingeniería y Tecnología
+  Grado en Ingeniería Informática
+  Programación de Aplicaciones Interactivas
+
+  @description Componente Vue para mostrar sliders reactivos. 
+               Permite ajustar un valor y un color RGB mediante sliders.
+  @author Álvaro Pérez Ramos
+  @file SlidersComponent.vue
+  @since 10 MAY 2025
+-->
+
 <template>
   <section class="seccion">
     <h2>Sliders Reactivos</h2>

@@ -1,3 +1,16 @@
+<!--
+  Universidad de La Laguna
+  Escuela Superior de Ingeniería y Tecnología
+  Grado en Ingeniería Informática
+  Programación de Aplicaciones Interactivas
+
+  @description Componente Vue para mostrar propiedades computadas. 
+               Muestra el nombre completo y la cantidad de tareas completadas.
+  @author Álvaro Pérez Ramos
+  @file ComputadosComponent.vue
+  @since 10 MAY 2025
+-->
+
 <template>
   <section class="seccion">
     <h2>Propiedades Computadas</h2>

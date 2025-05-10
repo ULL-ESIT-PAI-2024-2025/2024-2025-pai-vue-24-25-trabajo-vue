@@ -1,3 +1,16 @@
+<!--
+  Universidad de La Laguna
+  Escuela Superior de Ingeniería y Tecnología
+  Grado en Ingeniería Informática
+  Programación de Aplicaciones Interactivas
+
+  @description Componente Vue para mostrar contador reactivo. 
+               Permite incrementar y decrementar un contador.
+  @author Álvaro Pérez Ramos
+  @file PrimitivosComponent.vue
+  @since 10 MAY 2025
+-->
+
 <template>
   <section class="seccion">
     <h2>Datos Primitivos</h2>

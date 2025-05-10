@@ -1,3 +1,16 @@
+<!--
+  Universidad de La Laguna
+  Escuela Superior de Ingeniería y Tecnología
+  Grado en Ingeniería Informática
+  Programación de Aplicaciones Interactivas
+
+  @description Componente Vue para mostrar saber cómo funcionan los watchers. 
+               Muestra un contador y el último cambio realizado en él.
+  @author Álvaro Pérez Ramos
+  @file WatchersComponent.vue
+  @since 10 MAY 2025
+-->
+
 <template>
   <section class="seccion">
     <h2>Watchers</h2>

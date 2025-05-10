@@ -1,3 +1,14 @@
+/**
+ * Universidad de La Laguna
+ * Escuela Superior de Ingeniería y Tecnología
+ * Grado en Ingeniería Informática
+ * Asignatura: Programación de Aplicaciones Web
+ * 
+ * Estilos para la sección de reactividad básica
+ * @author Álvaro Pérez Ramos
+ * @date 2023-10-01
+ */
+
 .reactividad-container {
   max-width: 800px;
   margin: 0 auto;

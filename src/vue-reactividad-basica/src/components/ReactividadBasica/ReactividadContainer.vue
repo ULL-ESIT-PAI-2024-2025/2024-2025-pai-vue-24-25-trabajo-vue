@@ -1,3 +1,16 @@
+<!--
+  Universidad de La Laguna
+  Escuela Superior de Ingeniería y Tecnología
+  Grado en Ingeniería Informática
+  Programación de Aplicaciones Interactivas
+
+  @description Componente Vue para mostrar botones de navegación y cargar componentes reactivos. 
+               Permite navegar entre diferentes componentes que muestran reactividad en Vue.
+  @author Álvaro Pérez Ramos
+  @file ReactividadContainer.vue
+  @since 10 MAY 2025
+-->
+
 <template>
   <div class="reactividad-container">
     <h1>Reactividad en Vue</h1>
@@ -19,40 +32,5 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref } from 'vue';
-import PrimitivosComponent from './PrimitivosComponent.vue';
-import ObjetosComponent from './ObjetosComponent.vue';
-import ArraysComponent from './ArraysComponent.vue';
-import ComputadosComponent from './ComputadosComponent.vue';
-import WatchersComponent from './WatchersComponent.vue';
-import SlidersComponent from './SlidersComponent.vue';
-
-export default defineComponent({
-  name: 'ReactividadContainer',
-  components: {
-    PrimitivosComponent,
-    ObjetosComponent,
-    ArraysComponent,
-    ComputadosComponent,
-    WatchersComponent,
-    SlidersComponent
-  },
-  setup() {
-    const currentComponent = ref('PrimitivosComponent');
-    
-    const components = [
-      { name: 'PrimitivosComponent', label: 'Datos Primitivos' },
-      { name: 'ObjetosComponent', label: 'Objetos Reactivos' },
-      { name: 'ArraysComponent', label: 'Arrays Reactivos' },
-      { name: 'ComputadosComponent', label: 'Propiedades Computadas' },
-      { name: 'WatchersComponent', label: 'Watchers' },
-      { name: 'SlidersComponent', label: 'Sliders' }
-    ];
-    
-    return { currentComponent, components };
-  }
-});
-</script>
-
+<script lang="ts" src="./ReactividadContainer.ts"></script>
 <style scoped src="./reactividad.css"></style>

@@ -1,3 +1,16 @@
+<!-- 
+  Universidad de La Laguna
+  Escuela Superior de Ingeniería y Tecnología
+  Grado en Ingeniería Informática
+  Programación de Aplicaciones Interactivas
+
+  @description Componente Vue para gestionar un array reactivo de tareas. 
+               Permite agregar y eliminar tareas de la lista.
+  @author Álvaro Pérez Ramos
+  @file ArraysComponent.vue
+  @since 10 MAY 2025
+-->
+
 <template>
   <section class="seccion">
     <h2>Arrays Reactivos</h2>
