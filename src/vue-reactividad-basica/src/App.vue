@@ -1,17 +1,17 @@
 <template>
   <div id="app">
-    <ReactividadBasica />
+    <ReactividadContainer />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import ReactividadBasica from './components/ ReactividadBasica/ReactivdadBasica.vue';
+import ReactividadContainer from './components/ReactividadBasica/ReactividadContainer.vue';
 
 export default defineComponent({
   name: 'App',
   components: {
-    ReactividadBasica
+    ReactividadContainer
   }
 });
 </script>

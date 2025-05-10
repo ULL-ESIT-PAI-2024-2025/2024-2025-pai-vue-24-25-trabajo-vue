@@ -51,3 +51,29 @@ li button {
   padding: 3px 8px;
   font-size: 0.8em;
 }
+
+.reactividad-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.reactividad-nav button {
+  padding: 8px 16px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.reactividad-nav button.active {
+  background-color: #42b983;
+  color: white;
+  border-color: #42b983;
+}
+
+.component-container {
+  min-height: 300px;
+}
