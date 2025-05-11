@@ -1,0 +1,92 @@
+/**
+ * Universidad de La Laguna
+ * Escuela Superior de Ingeniería y Tecnología
+ * Grado en Ingeniería Informática
+ * Asignatura: Programación de Aplicaciones Web
+ * 
+ * Estilos para la sección de reactividad básica
+ * @author Álvaro Pérez Ramos
+ * @date 2023-10-01
+ */
+
+@import './base.css';
+
+.reactividad-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.seccion {
+  margin-bottom: 30px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+h1 {
+  color: #2c3e50;
+  text-align: center;
+}
+
+h2 {
+  color: #34495e;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
+
+button,
+input {
+  margin: 5px;
+  padding: 8px 12px;
+}
+
+input {
+  width: 200px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 5px 0;
+  padding: 5px;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li button {
+  padding: 3px 8px;
+  font-size: 0.8em;
+}
+
+.reactividad-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.reactividad-nav button {
+  padding: 8px 16px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.reactividad-nav button.active {
+  background-color: #42b983;
+  color: white;
+  border-color: #42b983;
+}
+
+.component-container {
+  min-height: 300px;
+}

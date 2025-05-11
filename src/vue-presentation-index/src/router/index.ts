@@ -22,6 +22,11 @@ const router = createRouter({
       name: 'names-pinia',
       component: () => import('../views/NamePiniaView.vue'),
     },
+    {
+      path: '/reactividad',
+      name: 'reactividad',
+      component: () => import('../views/ReactividadView.vue'),
+    },
   ],
 })
 

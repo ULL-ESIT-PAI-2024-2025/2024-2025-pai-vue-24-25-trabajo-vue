@@ -46,7 +46,7 @@ Programación de Aplicaciones Interactivas
 
 <!-- Importing the necessary libraries -->
 <script lang="ts">
-import CanvasFigurasComponent from '../figures';
+import CanvasFigurasComponent from '../components/vue-figures/figures';
 export default CanvasFigurasComponent;
 </script>
 

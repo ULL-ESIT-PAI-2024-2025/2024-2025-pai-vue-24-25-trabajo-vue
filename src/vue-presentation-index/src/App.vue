@@ -14,6 +14,7 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/figures">Figures</RouterLink>
         <RouterLink to ="/names-pinia">Names Pinia</RouterLink>
+        <RouterLink to ="/reactividad">Reactivity</RouterLink>
       </nav>
     </div>
   </header>
