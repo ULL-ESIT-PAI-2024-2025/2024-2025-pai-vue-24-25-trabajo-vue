@@ -1,0 +1,63 @@
+@import './base.css';
+
+/**
+ * canvas-figuras.css
+ * This file contains the CSS styles for the CanvasFiguras component.
+ * It styles the canvas, buttons, and input fields for a better user experience.
+*/
+
+.canvas-container {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f4f4f4;
+  margin: 20px;
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
+}
+
+canvas {
+  background: white;
+  border: 1px solid black;
+  display: block;
+  margin: 20px auto;
+}
+
+.controls {
+  margin-bottom: 10px;
+}
+
+.inputs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.inputs label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buttons {
+  margin-top: 10px;
+}
+
+button {
+  background-color: #008cba;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #005f73;
+}
