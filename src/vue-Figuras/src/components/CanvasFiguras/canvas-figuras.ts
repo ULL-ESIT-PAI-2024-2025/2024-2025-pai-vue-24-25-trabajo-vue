@@ -6,7 +6,7 @@
  * 
  * @author: Álvaro Pérez Ramos
  * @file: canvas-figuras.ts
- * @description: Componente de Vue para dibujar figuras en un canvas HTML5.
+ * @description: Lógica del componente para dibujar figuras en un canvas HTML5.
  * @date: 10 MAY 2025
  */
 
