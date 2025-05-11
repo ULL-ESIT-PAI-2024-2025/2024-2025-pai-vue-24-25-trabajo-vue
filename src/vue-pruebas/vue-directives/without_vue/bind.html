@@ -1,0 +1,28 @@
+<!--
+  Universidad de La Laguna
+  Grado en Ingeniería Informática
+  Asignatura: Programación de Aplicaciones Web
+
+  @author: Álvaro Pérez Ramos
+  @date: 10 MOY 2025
+-->
+
+<input id="urlInput" type="text" placeholder="Ingresa una URL" value="https://vuejs.org">
+<a id="enlace" href="https://vuejs.org" target="_blank">Visitar enlace</a>
+<img id="imagen" src="https://vuejs.org/images/logo.png" alt="Logo de Vue.js">
+
+<script>
+  const input = document.getElementById('urlInput');
+  const enlace = document.getElementById('enlace');
+  const imagen = document.getElementById('imagen');
+
+  input.addEventListener('input', function () {
+    enlace.href = input.value;
+  });
+
+  // Para actualizar otros atributos dinámicamente:
+  function actualizarImagen(nuevaURL, nuevaDescripcion) {
+    imagen.src = nuevaURL;
+    imagen.alt = nuevaDescripcion;
+  }
+</script>

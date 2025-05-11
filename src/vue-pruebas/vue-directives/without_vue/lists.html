@@ -1,0 +1,25 @@
+<!--
+  Universidad de La Laguna
+  Grado en Ingeniería Informática
+  Asignatura: Programación de Aplicaciones Web
+
+  @author: Álvaro Pérez Ramos
+  @date: 10 MOY 2025
+-->
+
+<ul id="miList"></ul>
+
+<script>
+  const lista = document.getElementById('miLista');
+  const items = [
+    { text: 'Element 1' },
+    { text: 'Element 2' },
+    { text: 'Element 3' }
+  ];
+
+  items.forEach(function (item) {
+    const li = document.createElement('li');
+    li.textContent = item.text;
+    lista.appendChild(li);
+  });
+</script>
