@@ -6,7 +6,7 @@
  * 
  * @author: Álvaro Pérez Ramos
  * @file: canvas-figuras.ts
- * @description: Componente de Vue para dibujar figuras en un canvas HTML5.
+ * @description: Lógica del componente para dibujar figuras en un canvas HTML5.
  * @date: 10 MAY 2025
  */
 
@@ -31,11 +31,12 @@ interface CanvasFigurasData {
   mostrarRadio: boolean;
   mostrarBase: boolean;
   mostrarAltura: boolean;
+  numFiguras: number;
   ctx: CanvasRenderingContext2D | null;
 }
 
 // Funciones de utilidad
-function actualizarInputs(component: CanvasFigurasData) {
+function actualizarInputs(component: any) {
   // Resetear todos los controles a falso
   component.mostrarLado = false;
   component.mostrarAncho = false;
@@ -79,7 +80,7 @@ function limpiarCanvas(ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement)
  * @param ctx - Contexto del canvas
  * @returns {void}
  */
-function dibujarFigura(component: CanvasFigurasData, ctx: CanvasRenderingContext2D) {
+function dibujarFigura(component: any, ctx: CanvasRenderingContext2D) {
   if (!component.figuraSeleccionada) return;
 
   const x = component.posX || 0;
@@ -136,11 +137,6 @@ function dibujarFigura(component: CanvasFigurasData, ctx: CanvasRenderingContext
   ctx.restore();
 }
 
-/**
- * Componente de Vue para dibujar figuras en un canvas HTML5.
- * @component CanvasFiguras
- * @description Componente que permite seleccionar una figura y dibujarla en un canvas HTML5.
- */
 export default defineComponent({
   name: 'CanvasFiguras',
   data(): CanvasFigurasData {
@@ -162,6 +158,7 @@ export default defineComponent({
       mostrarRadio: false,
       mostrarBase: false,
       mostrarAltura: false,
+      numFiguras: 5,
       ctx: null
     }
   },
@@ -185,6 +182,71 @@ export default defineComponent({
     limpiarCanvas() {
       if (this.ctx && this.$refs.canvas) {
         limpiarCanvas(this.ctx, this.$refs.canvas as HTMLCanvasElement);
+      }
+    },
+    generarFigurasAleatorias() {
+      if (!this.ctx || !this.$refs.canvas) return;
+
+      this.limpiarCanvas();
+      const canvas = this.$refs.canvas as HTMLCanvasElement;
+
+      for (let i = 0; i < this.numFiguras; i++) {
+        // Configuración aleatoria
+        const figuraAleatoria = ['cuadrado', 'triangulo', 'rectangulo', 'circulo', 'pentagono'][
+          Math.floor(Math.random() * 5)
+        ];
+        const colorAleatorio = `#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0')}`;
+        const posXAleatoria = Math.random() * canvas.width;
+        const posYAleatoria = Math.random() * canvas.height;
+        const rotacionAleatoria = Math.random() * 360;
+
+        // Guardar configuración actual
+        const configOriginal = {
+          figuraSeleccionada: this.figuraSeleccionada,
+          color: this.color,
+          posX: this.posX,
+          posY: this.posY,
+          rotacion: this.rotacion,
+          lado: this.lado,
+          ancho: this.ancho,
+          alto: this.alto,
+          radio: this.radio,
+          base: this.base,
+          altura: this.altura
+        };
+
+        // Configurar valores aleatorios
+        this.figuraSeleccionada = figuraAleatoria;
+        this.color = colorAleatorio;
+        this.posX = posXAleatoria;
+        this.posY = posYAleatoria;
+        this.rotacion = rotacionAleatoria;
+
+        // Configurar dimensiones según la figura
+        const size = 30 + Math.random() * 70; // Tamaño entre 30 y 100
+        switch (figuraAleatoria) {
+          case 'cuadrado':
+          case 'pentagono':
+            this.lado = size;
+            break;
+          case 'rectangulo':
+            this.ancho = size;
+            this.alto = size * (0.5 + Math.random());
+            break;
+          case 'triangulo':
+            this.base = size;
+            this.altura = size * (0.5 + Math.random());
+            break;
+          case 'circulo':
+            this.radio = size / 2;
+            break;
+        }
+
+        // Dibujar la figura
+        this.dibujarFigura();
+
+        // Restaurar configuración original
+        Object.assign(this, configOriginal);
       }
     }
   }

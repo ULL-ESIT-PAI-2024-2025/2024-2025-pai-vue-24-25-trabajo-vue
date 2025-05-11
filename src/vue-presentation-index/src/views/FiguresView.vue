@@ -7,13 +7,13 @@ Programación de Aplicaciones Interactivas
 @author Álvaro Pérez Ramos
 @file CanvasFiguras.vue
 @since 10 MAY 2025
-@description Componente Vue para dibujar figuras en un canvas HTML5. Permite seleccionar la figura, color, posición, rotación y dimensiones.
+@description Componente Vue para dibujar figuras en un canvas HTML5.
 -->
 
 <template>
   <div class="canvas-container">
     <h1>Figuras en Canvas</h1>
-    <canvas ref="canvas" width="800" height="400"></canvas>
+    <canvas ref="canvas" width="700" height="500"></canvas>
     
     <div class="controls">
       <label><input type="radio" v-model="figuraSeleccionada" value="cuadrado" @change="actualizarInputs"> Cuadrado</label>
@@ -35,16 +35,20 @@ Programación de Aplicaciones Interactivas
       <label v-show="mostrarRadio">Radio: <input type="number" v-model.number="radio" min="1"></label>
       <label v-show="mostrarBase">Base: <input type="number" v-model.number="base" min="1"></label>
       <label v-show="mostrarAltura">Altura: <input type="number" v-model.number="altura" min="1"></label>
+      
+      <label>Número de figuras: 
+        <input type="number" v-model.number="numFiguras" min="1" max="100">
+      </label>
     </div>
 
     <div class="buttons">
       <button @click="dibujarFigura">Dibujar</button>
       <button @click="limpiarCanvas">Limpiar</button>
+      <button @click="generarFigurasAleatorias">Generar Aleatorias</button>
     </div>
   </div>
 </template>
 
-<!-- Importing the necessary libraries -->
 <script lang="ts">
 import CanvasFigurasComponent from '../composables/figures';
 export default CanvasFigurasComponent;
