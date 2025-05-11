@@ -1,26 +1,26 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+import StudentImage from '../components/StudentImage.vue';
 </script>
 
 <template>
   <main>
     <h1>Page made by: </h1>
     <div class="welcome-row">
-      <TheWelcome 
-        imageUrl="../../public/student-icon/imagen-joseaportillo-pagina.png"
-        imageAlt="Description of image"
+      <StudentImage 
+        imageUrl="../../public/student-icon/joseaportillo-transparent.png"
+        imageAlt="Image of the student Jose Angel"
         name="José Ángel Portillo García"
-        email=""
+        email="jose.portillo.11@ull.edu.es"
       />
-      <TheWelcome 
-        imageUrl="../../public/student-icon/imagen-joseaportillo-pagina.png"
-        imageAlt="Description of image"
+      <StudentImage 
+        imageUrl="../../public/student-icon/alvaro-transparent.png"
+        imageAlt="Image of the student Alvaro"
         name="Álvaro Pérez Ramos"
         email="alvaro.perez.ramos.23@ull.edu.es"
       />
-      <TheWelcome 
-        imageUrl="../../public/student-icon/imagen-joseaportillo-pagina.png"
-        imageAlt="Description of image"
+      <StudentImage 
+        imageUrl="../../public/student-icon/diego-transparent.png"
+        imageAlt="Image of the student Diego"
         name="Diego Antonio Pi Arteaga"
         email="diego.antonio.pi.19@ull.edu.es"
       />
