@@ -37,7 +37,7 @@
 
 <script lang="ts">
 import { defineComponent, ref, onMounted} from 'vue';
-import { useRegisterStore } from '../store/nameRegister';
+import { useRegisterStore } from '../store/name-register';
 
 export default defineComponent({
   name: 'ObjetosComponent',

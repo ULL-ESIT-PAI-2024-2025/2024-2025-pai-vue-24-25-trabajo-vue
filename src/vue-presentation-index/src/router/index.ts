@@ -1,3 +1,15 @@
+/**
+ * Universidad de La Laguna
+ * Escuela Superior de Ingeniería y Tecnología
+ * Grado en Ingeniería Informática
+ * Asignatura: Programación de Aplicaciones Web
+ * 
+ * @author: Jose Angel Portillo Garcia
+ * @file: index.ts
+ * @description: Index del router de la aplicación, donde se gestionan todas las direcciones
+ * @date: 10 MAY 2025
+ */
+
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
