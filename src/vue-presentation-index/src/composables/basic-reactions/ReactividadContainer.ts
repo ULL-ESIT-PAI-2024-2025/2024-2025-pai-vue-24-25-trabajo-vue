@@ -11,12 +11,12 @@
 */
 
 import { defineComponent, ref } from 'vue';
-import PrimitivosComponent from './PrimitivosComponent.vue';
-import ObjetosComponent from './ObjetosComponent.vue';
-import ArraysComponent from './ArraysComponent.vue';
-import ComputadosComponent from './ComputadosComponent.vue';
-import WatchersComponent from './WatchersComponent.vue';
-import SlidersComponent from './SlidersComponent.vue';
+import PrimitivosComponent from '../../components/vue-basic-reactions/PrimitivosComponent.vue';
+import ObjetosComponent from '../../components/vue-basic-reactions/ObjetosComponent.vue';
+import ArraysComponent from '../../components/vue-basic-reactions/ArraysComponent.vue';
+import ComputadosComponent from '../../components/vue-basic-reactions/ComputadosComponent.vue';
+import WatchersComponent from '../../components/vue-basic-reactions/WatchersComponent.vue';
+import SlidersComponent from '../../components/vue-basic-reactions/SlidersComponent.vue';
 
 export default defineComponent({
   name: 'ReactividadContainer',

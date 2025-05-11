@@ -32,5 +32,5 @@
   </div>
 </template>
 
-<script lang="ts" src="../components/vue-basic-reactions/ReactividadContainer"></script>
+<script lang="ts" src="../composables/basic-reactions/ReactividadContainer"></script>
 <style scoped src="../assets/reactividad.css"></style>

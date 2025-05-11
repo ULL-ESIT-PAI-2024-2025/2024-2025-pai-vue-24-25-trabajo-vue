@@ -50,7 +50,7 @@ Programación de Aplicaciones Interactivas
 </template>
 
 <script lang="ts">
-import CanvasFigurasComponent from '../composables/figures';
+import CanvasFigurasComponent from '../composables/figures/figures';
 export default CanvasFigurasComponent;
 </script>
 

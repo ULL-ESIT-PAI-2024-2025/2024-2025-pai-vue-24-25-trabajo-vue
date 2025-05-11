@@ -37,12 +37,17 @@ const router = createRouter({
     {
       path: '/reactividad',
       name: 'reactividad',
-      component: () => import('../views/ReactividadView.vue'),
+      component: () => import('../views/ReactivityView.vue'),
     },
     {
       path: '/lissajous',
       name: 'lissajous',
       component: () => import('../views/LissajousView.vue'),
+    },
+    {
+      path: '/button',
+      name: 'button',
+      component: () => import('../views/ButtonView.vue'),
     },
   ],
 })
