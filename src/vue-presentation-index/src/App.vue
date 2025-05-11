@@ -15,12 +15,15 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/figures">Figures</RouterLink>
         <RouterLink to ="/names-pinia">Names Pinia</RouterLink>
         <RouterLink to ="/reactividad">Reactivity</RouterLink>
+        <RouterLink to ="/lissajous">Lissajous</RouterLink>
       </nav>
     </div>
   </header>
 
   <div class="content">
-    <RouterView />
+    <div class="view-container">
+      <RouterView />
+    </div>
   </div>
 </template>
 
@@ -40,6 +43,15 @@ header {
 
 .content {
   margin-top: 120px; /* Reduced from 180px */
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.view-container {
+  width: 100%;
+  max-width: 1000px; /* Adjust as needed based on your content */
+  padding: 0 1rem;
 }
 
 .logo {

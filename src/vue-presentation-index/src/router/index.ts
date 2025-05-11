@@ -39,6 +39,11 @@ const router = createRouter({
       name: 'reactividad',
       component: () => import('../views/ReactividadView.vue'),
     },
+    {
+      path: '/lissajous',
+      name: 'lissajous',
+      component: () => import('../views/LissajousView.vue'),
+    },
   ],
 })
 

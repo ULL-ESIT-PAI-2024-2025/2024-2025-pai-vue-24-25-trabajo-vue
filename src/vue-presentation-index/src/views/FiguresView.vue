@@ -13,7 +13,7 @@ Programación de Aplicaciones Interactivas
 <template>
   <div class="canvas-container">
     <h1>Figuras en Canvas</h1>
-    <canvas ref="canvas" width="1000" height="400"></canvas>
+    <canvas ref="canvas" width="800" height="400"></canvas>
     
     <div class="controls">
       <label><input type="radio" v-model="figuraSeleccionada" value="cuadrado" @change="actualizarInputs"> Cuadrado</label>
@@ -46,7 +46,7 @@ Programación de Aplicaciones Interactivas
 
 <!-- Importing the necessary libraries -->
 <script lang="ts">
-import CanvasFigurasComponent from '../components/vue-figures/figures';
+import CanvasFigurasComponent from '../composables/figures';
 export default CanvasFigurasComponent;
 </script>
 
