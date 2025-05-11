@@ -13,7 +13,7 @@ Programación de Aplicaciones Interactivas
 <template>
   <div class="canvas-container">
     <h1>Figuras en Canvas</h1>
-    <canvas ref="canvas" width="700" height="500"></canvas>
+    <canvas ref="canvas" width="700" height="400"></canvas>
     
     <div class="controls">
       <label><input type="radio" v-model="figuraSeleccionada" value="cuadrado" @change="actualizarInputs"> Cuadrado</label>
