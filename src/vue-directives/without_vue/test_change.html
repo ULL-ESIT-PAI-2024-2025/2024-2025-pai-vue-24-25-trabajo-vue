@@ -1,0 +1,20 @@
+<!--
+  Universidad de La Laguna
+  Grado en Ingeniería Informática
+  Asignatura: Programación de Aplicaciones Web
+
+  @author: Álvaro Pérez Ramos
+  @date: 10 MOY 2025
+-->
+
+<input id="miInput" placeholder="Escribe algo">
+<p id="resultado">El mensaje es: </p>
+
+<script>
+  const input = document.getElementById('miInput');
+  const resultado = document.getElementById('resultado');
+
+  input.addEventListener('input', function () {
+    resultado.textContent = 'El mensaje es: ' + input.value;
+  });
+</script>

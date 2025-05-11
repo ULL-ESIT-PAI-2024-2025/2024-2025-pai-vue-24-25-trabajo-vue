@@ -1,0 +1,27 @@
+<!--
+  Universidad de La Laguna
+  Grado en Ingeniería Informática
+  Asignatura: Programación de Aplicaciones Web
+
+  @author: Álvaro Pérez Ramos
+  @date: 10 MOY 2025
+-->
+  
+<p id="contador">Contador: 0</p>
+<button id="botonIncrementar">Incrementar</button>
+<button id="botonDecrementar">Decrementar</button>
+
+<script>
+  let contador = 0;
+  const contadorElemento = document.getElementById('contador');
+
+  document.getElementById('botonIncrementar').addEventListener('click', function () {
+    contador++;
+    contadorElemento.textContent = 'Contador: ' + contador;
+  });
+
+  document.getElementById('botonDecrementar').addEventListener('click', function () {
+    contador--;
+    contadorElemento.textContent = 'Contador: ' + contador;
+  });
+</script>

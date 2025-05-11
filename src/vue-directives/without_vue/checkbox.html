@@ -1,0 +1,31 @@
+<!--
+  Universidad de La Laguna
+  Grado en Ingeniería Informática
+  Asignatura: Programación de Aplicaciones Web
+
+  @author: Álvaro Pérez Ramos
+  @date: 10 MOY 2025
+-->
+  
+<button id="botonAlternar">Alternar</button>
+<p id="contenidoPrincipal">Este contenido es visible</p>
+<p id="contenidoAlternativo" style="display: none;">Este contenido alternativo es visible</p>
+
+<script>
+  let mostrar = true;
+  const boton = document.getElementById('botonAlternar');
+  const principal = document.getElementById('contenidoPrincipal');
+  const alternativo = document.getElementById('contenidoAlternativo');
+  
+  boton.addEventListener('click', function() {
+    mostrar = !mostrar;
+    
+    if (mostrar) {
+      principal.style.display = 'block';
+      alternativo.style.display = 'none';
+    } else {
+      principal.style.display = 'none';
+      alternativo.style.display = 'block';
+    }
+  });
+</script>
