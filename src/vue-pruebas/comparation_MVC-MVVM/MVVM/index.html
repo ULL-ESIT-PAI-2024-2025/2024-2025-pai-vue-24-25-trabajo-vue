@@ -1,0 +1,17 @@
+<!-- index.html -->
+<div id="app">
+  <input v-model="name" placeholder="Escribe tu nombre" />
+  <p>Hola, {{ name }}</p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@3.4.0/dist/vue.global.prod.js"></script>
+<script>
+  const { createApp, ref } = Vue;
+
+  createApp({
+    setup() {
+      const name = ref('');
+      return { name };
+    }
+  }).mount('#app');
+</script>
