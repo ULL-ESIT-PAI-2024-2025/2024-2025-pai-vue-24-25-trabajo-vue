@@ -1,3 +1,15 @@
+<!--
+Universidad de La Laguna
+Escuela Superior de Ingeniería y Tecnología
+Grado en Ingeniería Informática
+Programación de Aplicaciones Interactivas
+
+@author Jose Angel Portillo Garcia
+@file HomeView.vue
+@since 10 MAY 2025
+@description Componente Vue que define la vista del Home
+-->
+
 <script setup lang="ts">
 import StudentImage from '../components/StudentImage.vue';
 </script>

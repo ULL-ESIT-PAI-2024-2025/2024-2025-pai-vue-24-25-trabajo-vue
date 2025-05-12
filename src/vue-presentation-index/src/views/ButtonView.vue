@@ -1,3 +1,15 @@
+<!--
+Universidad de La Laguna
+Escuela Superior de Ingeniería y Tecnología
+Grado en Ingeniería Informática
+Programación de Aplicaciones Interactivas
+
+@author Jose Angel Portillo Garcia
+@file ButtonView.vue
+@since 10 MAY 2025
+@description Componente Vue para dibujar figuras en un canvas HTML5.
+-->
+
 <script lang="ts" setup>
 import { ref } from 'vue'
 

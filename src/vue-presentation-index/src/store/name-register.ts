@@ -13,7 +13,7 @@
 import { defineStore } from "pinia";
 import { ref } from "vue";
 
-export const useRegisterStore = defineStore('nombre de tu registro', () => {
+export const useRegisterStore = defineStore('register', () => {
   const name = ref('');
   const surname = ref('');
   const age = ref(0)

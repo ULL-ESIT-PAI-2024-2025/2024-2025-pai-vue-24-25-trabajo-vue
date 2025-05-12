@@ -1,10 +1,13 @@
 <!--
-  Universidad de La Laguna
-  Escuela Superior de Ingeniería y Tecnología
-  Grado en Ingeniería Informática
-  Programación de Aplicaciones Interactivas
+Universidad de La Laguna
+Escuela Superior de Ingeniería y Tecnología
+Grado en Ingeniería Informática
+Programación de Aplicaciones Interactivas
 
-  Componente que define la app Lissajous
+@author Jose Angel Portillo Garcia
+@file LissajousView.vue
+@since 10 MAY 2025
+@description Componente Vue que define la vista de Lissajous
 -->
 <template>
   <div>

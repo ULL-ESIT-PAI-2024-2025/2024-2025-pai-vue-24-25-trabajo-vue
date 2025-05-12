@@ -5,9 +5,9 @@ Grado en Ingeniería Informática
 Programación de Aplicaciones Interactivas
 
 @author Álvaro Pérez Ramos
-@file CanvasFiguras.vue
+@file FiguresView.vue
 @since 10 MAY 2025
-@description Componente Vue para dibujar figuras en un canvas HTML5.
+@description Vista que define la pagina de las figuras.
 -->
 
 <template>

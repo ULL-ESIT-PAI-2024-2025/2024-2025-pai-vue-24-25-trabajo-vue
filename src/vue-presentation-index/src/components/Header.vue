@@ -1,3 +1,15 @@
+<!--
+Universidad de La Laguna
+Escuela Superior de Ingeniería y Tecnología
+Grado en Ingeniería Informática
+Programación de Aplicaciones Interactivas
+
+@author Jose Angel Portillo Garcia
+@file Header.vue
+@since 10 MAY 2025
+@description Componente Vue que define un header
+-->
+
 <script setup lang="ts">
 defineProps<{
   msg: string

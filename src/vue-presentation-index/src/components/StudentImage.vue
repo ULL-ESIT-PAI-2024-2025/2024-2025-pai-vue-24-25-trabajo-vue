@@ -1,3 +1,15 @@
+<!--
+Universidad de La Laguna
+Escuela Superior de Ingeniería y Tecnología
+Grado en Ingeniería Informática
+Programación de Aplicaciones Interactivas
+
+@author Jose Angel Portillo Garcia
+@file HomeView.vue
+@since 10 MAY 2025
+@description Componente Vue que define la imagen de un estudiante, su nombre y su correo
+-->
+
 <script setup lang="ts">
 // You can define props to make this component reusable
 defineProps({
