@@ -1,3 +1,15 @@
+/**
+ * Universidad de La Laguna
+ * Escuela Superior de Ingeniería y Tecnología
+ * Grado en Ingeniería Informática
+ * Asignatura: Programación de Aplicaciones Web
+ * 
+ * @author: Jose Angel Portillo Garcia
+ * @file: main.ts
+ * @description: Main del programa donde se monta la App
+ * @date: 10 MAY 2025
+ */
+
 import './assets/main.css'
 
 import { createApp } from 'vue'
